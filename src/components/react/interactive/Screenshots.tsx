@@ -9,7 +9,7 @@ const Screenshots = ({ images }: ScreenshotsProps) => {
 	const isIphone = activeDevice === "iphone";
 
 	return (
-		<div className="mb-16">
+		<div className="mb-12">
 			<div className="mb-8 flex items-center justify-between">
 				<h2 className="text-2xl font-semibold text-gray-900 dark:text-white">
 					Screenshots
