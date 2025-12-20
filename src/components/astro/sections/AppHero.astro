@@ -17,6 +17,9 @@ const { title, description, storeLinks, logo } = Astro.props;
 
 	<div class="flex flex-1 flex-col justify-between text-center md:text-left">
 		<div>
+			<span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-white/[0.06] text-gray-600 dark:text-gray-300 border border-gray-200 dark:border-white/10 mb-4">
+				Beta - Join Early Adopters
+			</span>
 			<h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-3">{title}</h1>
 			<p class="text-lg text-gray-600 dark:text-gray-400 leading-relaxed mb-6 max-w-2xl mx-auto md:mx-0">{description}</p>
 		</div>
@@ -37,20 +40,18 @@ const { title, description, storeLinks, logo } = Astro.props;
 				</span>
 			</a>
 
-			<a
-				href={storeLinks.google}
-				target="_blank"
-				rel="noopener noreferrer"
-				class="group flex items-center gap-2 rounded-xl border border-gray-300 dark:border-white/10 bg-white dark:bg-white/[0.04] px-4 py-3 hover:bg-gray-50 dark:hover:bg-white/[0.08] hover:border-gray-400 dark:hover:border-white/20 shadow-sm flex-1 min-w-0 md:flex-initial"
+			<div
+				class="flex items-center gap-2 rounded-xl border border-gray-200 dark:border-white/[0.06] bg-gray-50 dark:bg-white/[0.02] px-4 py-3 opacity-60 cursor-not-allowed flex-1 min-w-0 md:flex-initial"
+				title="Coming Soon"
 			>
 				<div class="flex items-center justify-center w-6 h-6 flex-shrink-0">
-					<FaGooglePlay className="text-gray-600 dark:text-gray-300 group-hover:scale-110 group-hover:text-gray-800 dark:group-hover:text-white w-4 h-4" />
+					<FaGooglePlay className="text-gray-400 dark:text-gray-500 w-4 h-4" />
 				</div>
 				<span class="text-left min-w-0">
-					<div class="text-[10px] font-medium text-gray-500 dark:text-gray-400 group-hover:text-gray-600 dark:group-hover:text-gray-300">Get it on</div>
-					<div class="text-xs font-semibold tracking-wide text-gray-900 dark:text-white/90 group-hover:text-gray-900 dark:group-hover:text-white">Google Play</div>
+					<div class="text-[10px] font-medium text-gray-400 dark:text-gray-500">Coming Soon</div>
+					<div class="text-xs font-semibold tracking-wide text-gray-500 dark:text-gray-400">Google Play</div>
 				</span>
-			</a>
+			</div>
 		</div>
 	</div>
 </div>

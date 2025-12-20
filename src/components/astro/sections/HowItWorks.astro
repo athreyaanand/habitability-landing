@@ -1,0 +1,62 @@
+---
+/** biome-ignore-all lint/correctness/noUnusedImports: React icons are used in JSX */
+/** biome-ignore-all lint/correctness/noUnusedVariables: variables used in Astro components */
+
+import { FiPlus, FiUsers, FiAward } from "react-icons/fi";
+
+const steps = [
+	{
+		number: 1,
+		title: "Create Your Habit",
+		description: "Set up any habit you want to build - from morning routines to fitness goals",
+		icon: FiPlus,
+	},
+	{
+		number: 2,
+		title: "Invite Your Friends",
+		description: "Share habits with friends who'll keep you accountable and motivated",
+		icon: FiUsers,
+	},
+	{
+		number: 3,
+		title: "Celebrate Together",
+		description: "Track streaks, hit milestones, and celebrate your wins as a community",
+		icon: FiAward,
+	},
+];
+---
+
+<div class="mb-16">
+	<h2 class="mb-8 text-2xl font-semibold text-gray-900 dark:text-white text-center">
+		How It Works
+	</h2>
+
+	<div class="relative">
+		<!-- Connecting line (desktop only) -->
+		<div class="hidden md:block absolute top-12 left-[calc(16.67%+24px)] right-[calc(16.67%+24px)] h-[2px] bg-gray-200 dark:bg-white/10"></div>
+
+		<div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6">
+			{steps.map(({ number, title, description, icon: Icon }) => (
+				<div class="flex flex-col items-center text-center">
+					<!-- Number circle -->
+					<div class="relative z-10 flex items-center justify-center w-12 h-12 rounded-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-semibold text-lg mb-4">
+						{number}
+					</div>
+
+					<!-- Icon -->
+					<div class="flex items-center justify-center w-14 h-14 rounded-xl bg-gray-100 dark:bg-white/[0.04] mb-4">
+						<Icon className="w-7 h-7 text-gray-700 dark:text-white/90" />
+					</div>
+
+					<!-- Content -->
+					<h3 class="text-lg font-medium text-gray-900 dark:text-white mb-2">
+						{title}
+					</h3>
+					<p class="text-sm leading-relaxed text-gray-600 dark:text-gray-400 max-w-[280px]">
+						{description}
+					</p>
+				</div>
+			))}
+		</div>
+	</div>
+</div>

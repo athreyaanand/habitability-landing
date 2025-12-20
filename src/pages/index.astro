@@ -3,28 +3,52 @@
 /** biome-ignore-all lint/correctness/noUnusedVariables: variables used in Astro components */
 
 import AppHero from "@astro/sections/AppHero.astro";
+import ComingSoon from "@astro/sections/ComingSoon.astro";
 import FAQ from "@astro/sections/FAQ.astro";
 import Features from "@astro/sections/Features.astro";
+import FinalCTA from "@astro/sections/FinalCTA.astro";
+import HowItWorks from "@astro/sections/HowItWorks.astro";
 import { faqs } from "@config/faqs";
 import { features } from "@config/features";
-import { reviews } from "@config/reviews";
 import { screenshots } from "@config/screenshots";
 import { siteConfig } from "@config/site";
 import Layout from "@layouts/Layout.astro";
 import Lightbox from "@react/interactive/Lightbox";
-import Reviews from "@react/interactive/Reviews";
 import Screenshots from "@react/interactive/Screenshots";
+import AnimatedSection from "@react/ui/AnimatedSection";
 
 const { name: title, description, storeLinks, logo } = siteConfig;
 ---
 
 <Layout title={title} description={description}>
   <main class="min-h-screen max-w-5xl mx-auto px-4 py-8">
-    <AppHero title={title} description={description} storeLinks={storeLinks} logo={logo} />
-    <div class="mb-16"><Screenshots images={screenshots} client:load /></div>
-    <Features items={features} />
-    <Reviews items={reviews} client:visible />
-    <FAQ items={faqs} />
+    <AnimatedSection client:load>
+      <AppHero title={title} description={description} storeLinks={storeLinks} logo={logo} />
+    </AnimatedSection>
+
+    <AnimatedSection delay={0.1} client:load>
+      <div class="mb-16"><Screenshots images={screenshots} client:load /></div>
+    </AnimatedSection>
+
+    <AnimatedSection delay={0.1} client:visible>
+      <HowItWorks />
+    </AnimatedSection>
+
+    <AnimatedSection delay={0.1} client:visible>
+      <Features items={features} />
+    </AnimatedSection>
+
+    <AnimatedSection delay={0.1} client:visible>
+      <FAQ items={faqs} />
+    </AnimatedSection>
+
+    <AnimatedSection delay={0.1} client:visible>
+      <ComingSoon />
+    </AnimatedSection>
+
+    <AnimatedSection delay={0.1} client:visible>
+      <FinalCTA />
+    </AnimatedSection>
   </main>
 </Layout>
 

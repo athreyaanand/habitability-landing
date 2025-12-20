@@ -26,12 +26,12 @@ const Screenshots = ({ images }: ScreenshotsProps) => {
 								key={image}
 								type="button"
 								onClick={() => window.openLightbox?.(index, activeDevice)}
-								className="relative flex-shrink-0 overflow-hidden rounded-xl focus:outline-none"
+								className="relative flex-shrink-0 overflow-hidden rounded-xl focus:outline-none group"
 							>
 								<img
 									src={image}
 									alt={`Screenshot ${index + 1}`}
-									className={`rounded-xl border border-gray-300 dark:border-white/10 object-cover shadow-lg ${isIphone
+									className={`rounded-xl border border-gray-300 dark:border-white/10 object-cover shadow-lg transition-all duration-200 group-hover:scale-[1.02] group-hover:shadow-xl group-hover:border-gray-400 dark:group-hover:border-white/20 ${isIphone
 											? "aspect-[9/16] w-[260px]"
 											: "aspect-[4/3] w-[360px]"
 										}`}
