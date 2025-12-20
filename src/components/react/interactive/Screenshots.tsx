@@ -10,7 +10,7 @@ const Screenshots = ({ images }: ScreenshotsProps) => {
 
 	return (
 		<div className="mb-16">
-			<div className="mb-6 flex items-center justify-between">
+			<div className="mb-8 flex items-center justify-between">
 				<h2 className="text-2xl font-semibold text-gray-900 dark:text-white">
 					Screenshots
 				</h2>
