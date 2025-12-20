@@ -17,7 +17,21 @@ import Lightbox from "@react/interactive/Lightbox";
 import Screenshots from "@react/interactive/Screenshots";
 import AnimatedSection from "@react/ui/AnimatedSection";
 
-const { name: title, description, storeLinks, logo } = siteConfig;
+const { name: title, description, storeLinks, logo, url: siteURL } = siteConfig;
+
+// FAQPage Schema for rich snippets
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+};
 ---
 
 <Layout title={title} description={description}>
@@ -50,6 +64,9 @@ const { name: title, description, storeLinks, logo } = siteConfig;
       <FinalCTA />
     </AnimatedSection>
   </main>
+
+  <!-- FAQ Page Structured Data -->
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 </Layout>
 
 <Lightbox images={screenshots} client:load />

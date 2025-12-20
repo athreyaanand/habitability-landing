@@ -3,18 +3,18 @@ import type { Feature } from "@/types/app";
 
 export const features: Feature[] = [
 	{
-		title: "Track Your Habits",
-		description: "Beautiful visual grids show your progress at a glance. Build streaks, set goals, and watch your consistency grow over time.",
+		title: "Daily Habit Tracker with Visual Progress",
+		description: "Our habit tracker app features beautiful visual grids that show your daily habit progress at a glance. Build streaks, set goals, and watch your consistency grow over time with this free habit tracking app.",
 		icon: FiGrid,
 	},
 	{
-		title: "Stay Accountable with Friends",
-		description: "Connect with friends to share your progress. Send nudges, celebrate milestones, and keep each other motivated.",
+		title: "Social Habit Tracker with Friends",
+		description: "Unlike other habit tracker apps, Habitability is a social habit tracker that lets you connect with friends. Share your progress, send accountability nudges, and celebrate milestones together.",
 		icon: FiUsers,
 	},
 	{
-		title: "Build Lasting Streaks",
-		description: "Set streak goals and get smart reminders. Track your current streak and never break the chain.",
+		title: "Streak Tracker & Habit Reminders",
+		description: "Never break your habit streak with smart reminders and streak tracking. Our habit tracker for iPhone helps you maintain accountability and build lasting habits with customizable notifications.",
 		icon: FiTrendingUp,
 	},
 ];

@@ -13,6 +13,43 @@ const { title, description } = Astro.props;
 const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : Astro.url;
 const ogImageURL = new URL(siteConfig.logo, Astro.url).href;
 const appleTouchIconURL = Astro.site ? new URL(siteConfig.logo, Astro.site).href : siteConfig.logo;
+const siteURL = siteConfig.url || "https://habitability.app";
+
+// Structured Data - SoftwareApplication Schema
+const softwareAppSchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Habitability",
+  "description": "Free social habit tracker app that helps you build lasting habits with friends. Track streaks, stay accountable, and celebrate milestones together.",
+  "applicationCategory": "LifestyleApplication",
+  "operatingSystem": "iOS",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "url": siteURL,
+  "downloadUrl": siteConfig.storeLinks.apple,
+  "screenshot": `${siteURL}/assets/screenshots/iphone/1.png`,
+  "softwareVersion": "1.0",
+  "author": {
+    "@type": "Organization",
+    "name": "Habitability"
+  }
+};
+
+// Structured Data - Organization Schema
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Habitability",
+  "url": siteURL,
+  "logo": `${siteURL}${siteConfig.logo}`,
+  "sameAs": [
+    "https://x.com/habitabilityapp"
+  ],
+  "description": "Habitability is a free social habit tracker app for building lasting habits with friends."
+};
 ---
 
 <!DOCTYPE html>
@@ -25,15 +62,26 @@ const appleTouchIconURL = Astro.site ? new URL(siteConfig.logo, Astro.site).href
     
     <title>{title}</title>
     {description && <meta name="description" content={description} />}
-    
+    <meta name="author" content="Habitability" />
+    <meta name="robots" content="index, follow" />
+
     <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph / Facebook -->
     <meta property="og:title" content={title} />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Habitability" />
+    <meta property="og:image" content={ogImageURL} />
+    <meta property="og:image:alt" content="Habitability - Free Social Habit Tracker App" />
     {description && <meta property="og:description" content={description} />}
-    
+
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content={siteConfig.twitterHandle} />
+    <meta name="twitter:creator" content={siteConfig.twitterHandle} />
     <meta name="twitter:title" content={title} />
+    <meta name="twitter:image" content={ogImageURL} />
     {description && <meta name="twitter:description" content={description} />}
     
     <link rel="icon" type="image/png" sizes="32x32" href={siteConfig.logo} />
@@ -41,7 +89,11 @@ const appleTouchIconURL = Astro.site ? new URL(siteConfig.logo, Astro.site).href
     <link rel="icon" sizes="192x192" href={siteConfig.logo} />
     <link rel="icon" sizes="512x512" href={siteConfig.logo} />
     <link rel="apple-touch-icon" sizes="180x180" href={appleTouchIconURL} />
-    
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json" set:html={JSON.stringify(softwareAppSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+
     <script is:inline>
       // if ('scrollRestoration' in history) {
       //   history.scrollRestoration = 'manual';
