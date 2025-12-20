@@ -4,9 +4,9 @@ import type { ScreenshotsProps } from "@/types/app";
 import { areImagesEqual } from "@/types/app";
 
 const screenshotAltTags = [
-	"Habitability habit tracker app daily tracking grid interface",
-	"Habitability social habit tracker showing friends and accountability features",
-	"Habitability streak tracker and habit progress statistics view",
+	"Habitability app showing the daily habit tracking grid",
+	"Habitability app showing social features with friends",
+	"Habitability app showing streak progress and statistics",
 ];
 
 const Screenshots = ({ images }: ScreenshotsProps) => {
@@ -15,7 +15,7 @@ const Screenshots = ({ images }: ScreenshotsProps) => {
 	const isIphone = activeDevice === "iphone";
 
 	const getAltText = (index: number) => {
-		const baseAlt = screenshotAltTags[index] || `Habitability habit tracker app screenshot ${index + 1}`;
+		const baseAlt = screenshotAltTags[index] || `Habitability app screenshot ${index + 1}`;
 		return `${baseAlt} on ${isIphone ? "iPhone" : "iPad"}`;
 	};
 
@@ -23,7 +23,7 @@ const Screenshots = ({ images }: ScreenshotsProps) => {
 		<div className="mb-12">
 			<div className="mb-8 flex items-center justify-between">
 				<h2 className="text-2xl font-semibold text-gray-900 dark:text-white">
-					Habit Tracker App Screenshots
+					Screenshots
 				</h2>
 				<DeviceToggle activeDevice={activeDevice} onToggle={setActiveDevice} />
 			</div>
