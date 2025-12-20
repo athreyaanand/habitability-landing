@@ -17,7 +17,7 @@ import Lightbox from "@react/interactive/Lightbox";
 import Screenshots from "@react/interactive/Screenshots";
 import AnimatedSection from "@react/ui/AnimatedSection";
 
-const { name: title, description, storeLinks, logo, url: siteURL } = siteConfig;
+const { name, title, description, storeLinks, logo } = siteConfig;
 
 // FAQPage Schema for rich snippets
 const faqSchema = {
@@ -37,7 +37,7 @@ const faqSchema = {
 <Layout title={title} description={description}>
   <main class="min-h-screen max-w-5xl mx-auto px-4 pt-12 pb-8">
     <AnimatedSection client:load>
-      <AppHero title={title} description={description} storeLinks={storeLinks} logo={logo} />
+      <AppHero title={name} description={description} storeLinks={storeLinks} logo={logo} />
     </AnimatedSection>
 
     <AnimatedSection delay={0.1} client:load>
