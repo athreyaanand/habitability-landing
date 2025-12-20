@@ -1,15 +1,15 @@
 {
-  "name": "Your App Name",
-  "short_name": "YourApp",
-  "description": "Here you can write a brief description of your application. Tell users about its main features and benefits in 1-2 sentences.",
+  "name": "Habitability",
+  "short_name": "Habitability",
+  "description": "Build lasting habits with friends. Track your progress, stay accountable, and celebrate milestones together.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#3b82f6",
+  "theme_color": "#6366f1",
   "orientation": "portrait-primary",
   "scope": "/",
   "lang": "en",
-  "categories": ["productivity", "utilities"],
+  "categories": ["productivity", "lifestyle", "health"],
   "icons": [
     {
       "src": "/assets/favicon.png",

@@ -1,24 +1,17 @@
 import {
-	RiInstagramFill,
-	RiTelegram2Fill,
 	RiTwitterXFill,
 } from "react-icons/ri";
 import type { SocialLink } from "@/types/app";
 
 export const socialLinks: SocialLink[] = [
 	{
-		url: "#",
-		icon: RiInstagramFill,
-		label: "Instagram",
-	},
-	{
-		url: "#",
-		icon: RiTelegram2Fill,
-		label: "Telegram",
-	},
-	{
-		url: "#",
+		url: "https://x.com/habitabilityapp",
 		icon: RiTwitterXFill,
-		label: "Twitter",
+		label: "Habitability on X",
+	},
+	{
+		url: "https://x.com/athreyaanand",
+		icon: RiTwitterXFill,
+		label: "Developer",
 	},
 ];

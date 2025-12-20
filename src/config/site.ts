@@ -1,12 +1,12 @@
 import { socialLinks } from "./socialLinks";
 
 export const siteConfig = {
-	name: "Your App Name",
-	description: "Here you can write a brief description of your application. Tell users about its main features and benefits in 1-2 sentences.",
-	keywords: ["mobile app", "landing page", "astro", "react", "typescript"],
+	name: "Habitability",
+	description: "Build lasting habits with friends. Track your progress, stay accountable, and celebrate milestones together.",
+	keywords: ["habit tracker", "habit app", "accountability", "habit building", "streak tracker", "ios app", "productivity", "self improvement", "daily habits", "goal tracking"],
 	logo: "/assets/favicon.png",
 	storeLinks: {
-		apple: "#",
+		apple: "https://testflight.apple.com/join/VFyYyxPD",
 		google: "#",
 	},
 	socialLinks,
