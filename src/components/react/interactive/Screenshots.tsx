@@ -4,9 +4,12 @@ import type { ScreenshotsProps } from "@/types/app";
 import { areImagesEqual } from "@/types/app";
 
 const screenshotAltTags = [
-	"Habitability app showing the daily habit tracking grid",
-	"Habitability app showing social features with friends",
-	"Habitability app showing streak progress and statistics",
+	"Habitability app intro screen",
+	"Habitability app main habit tracking grid",
+	"Habitability app habit detail view",
+	"Habitability app friend feed",
+	"Habitability app friend detail view",
+	"Habitability app profile screen",
 ];
 
 const Screenshots = ({ images }: ScreenshotsProps) => {
@@ -43,8 +46,8 @@ const Screenshots = ({ images }: ScreenshotsProps) => {
 									src={image}
 									alt={getAltText(index)}
 									className={`rounded-xl border border-gray-300 dark:border-white/10 object-cover shadow-lg transition-all duration-200 group-hover:scale-[1.02] group-hover:shadow-xl group-hover:border-gray-400 dark:group-hover:border-white/20 ${isIphone
-											? "aspect-[9/16] w-[260px]"
-											: "aspect-[4/3] w-[360px]"
+											? "aspect-[430/932] w-[260px]"
+											: "aspect-[3/4] w-[360px]"
 										}`}
 									loading="lazy"
 								/>
