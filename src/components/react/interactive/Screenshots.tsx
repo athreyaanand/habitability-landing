@@ -45,9 +45,9 @@ const Screenshots = ({ images }: ScreenshotsProps) => {
 								<img
 									src={image}
 									alt={getAltText(index)}
-									className={`rounded-xl border border-gray-300 dark:border-white/10 object-cover shadow-lg transition-all duration-200 group-hover:scale-[1.02] group-hover:shadow-xl group-hover:border-gray-400 dark:group-hover:border-white/20 ${isIphone
-											? "aspect-[430/932] w-[260px]"
-											: "aspect-[3/4] w-[360px]"
+									className={`rounded-xl border border-gray-300 dark:border-white/10 object-contain shadow-lg transition-all duration-200 group-hover:scale-[1.02] group-hover:shadow-xl group-hover:border-gray-400 dark:group-hover:border-white/20 ${isIphone
+											? "aspect-[1242/2688] w-[260px]"
+											: "aspect-[2048/2732] w-[360px]"
 										}`}
 									loading="lazy"
 								/>
