@@ -3,18 +3,18 @@ import type { Feature } from "@/types/app";
 
 export const features: Feature[] = [
 	{
-		title: "Track Your Habits",
-		description: "Beautiful visual grids show your progress at a glance. Build streaks, set goals, and watch your consistency grow over time.",
+		title: "Simple Habit Tracking",
+		description: "Tap to check off your habits. See your history as a grid so you know at a glance how you've been doing.",
 		icon: FiGrid,
 	},
 	{
-		title: "Stay Accountable with Friends",
-		description: "Share habits with the people who matter. Send nudges, celebrate milestones, and keep each other motivated when things get hard.",
+		title: "Friends Keep You Honest",
+		description: "Add friends to your habits. They'll see when you skip a day, and you can nudge each other to get back on track.",
 		icon: FiUsers,
 	},
 	{
-		title: "Build Lasting Streaks",
-		description: "Smart reminders help you show up every day. Track your streaks and never break the chain.",
+		title: "Streaks That Matter",
+		description: "Your streak count is visible to friends. Nobody wants to be the one who broke a 30-day streak.",
 		icon: FiTrendingUp,
 	},
 ];

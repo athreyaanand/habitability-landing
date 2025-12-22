@@ -2,8 +2,8 @@ import { socialLinks } from "./socialLinks";
 
 export const siteConfig = {
 	name: "Habitability",
-	title: "Habitability | Free Social Habit Tracker App",
-	description: "Habitability is the free social habit tracker app that helps you build lasting habits with friends. Track streaks, stay accountable, and celebrate milestones together. Download for iOS.",
+	title: "Habitability - Build Habits with Friends",
+	description: "A habit tracker that actually works because your friends are in on it. Track habits together, nudge each other, and see who's keeping up. Free on iOS.",
 	keywords: [
 		// Primary keywords
 		"habit tracker",
