@@ -1,0 +1,3 @@
+# Redirect all friend deep links to the static handler page
+# The 200 status serves the page without changing the URL (rewrite)
+/friend/*  /friend/index.html  200
