@@ -1,0 +1,13 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.athreyaanand.habitability",
+      "sha256_cert_fingerprints": [
+        "08:B4:B9:F0:33:05:2A:FD:67:E0:C6:69:DB:59:D4:84:4D:25:26:85:C0:1C:9F:67:0C:10:73:AC:53:A1:C0:DE",
+        "54:21:A5:56:01:51:48:69:CA:21:7A:CA:1D:6D:4A:88:D3:16:09:90:50:07:D0:B1:FD:89:BF:0A:2E:64:E4:38"
+      ]
+    }
+  }
+]

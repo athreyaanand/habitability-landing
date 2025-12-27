@@ -1,0 +1,14 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "23H6NM7NHY.com.athreyaanand.habitability",
+        "paths": ["/friend/*"]
+      }
+    ]
+  },
+  "webcredentials": {
+    "apps": ["23H6NM7NHY.com.athreyaanand.habitability"]
+  }
+}

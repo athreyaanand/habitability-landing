@@ -1,0 +1,209 @@
+---
+import { siteConfig } from "@config/site";
+
+const { userId } = Astro.params;
+
+// Build the deep link URL
+const deepLinkUrl = `habitability://friend/${userId}`;
+const webUrl = `https://habitability.app/friend/${userId}`;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Friend - Habitability</title>
+    <meta name="description" content="Add this person as a friend on Habitability - the social habit tracker app." />
+
+    <!-- Open Graph for link previews -->
+    <meta property="og:title" content="Add me on Habitability!" />
+    <meta property="og:description" content="Scan this QR code or tap the link to add me as a friend on Habitability." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={webUrl} />
+    <meta property="og:image" content={`${siteConfig.url}/assets/favicon.png`} />
+
+    <!-- App Links meta tags -->
+    <meta property="al:ios:url" content={deepLinkUrl} />
+    <meta property="al:ios:app_store_id" content="6739803821" />
+    <meta property="al:ios:app_name" content="Habitability" />
+    <meta property="al:android:url" content={deepLinkUrl} />
+    <meta property="al:android:package" content="com.athreyaanand.habitability" />
+    <meta property="al:android:app_name" content="Habitability" />
+
+    <link rel="icon" type="image/png" href="/assets/favicon.png" />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+        color: white;
+        padding: 24px;
+        text-align: center;
+      }
+
+      .container {
+        max-width: 400px;
+        width: 100%;
+      }
+
+      .logo {
+        width: 80px;
+        height: 80px;
+        border-radius: 20px;
+        margin-bottom: 24px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      }
+
+      h1 {
+        font-size: 28px;
+        font-weight: 700;
+        margin-bottom: 12px;
+      }
+
+      p {
+        font-size: 16px;
+        opacity: 0.8;
+        margin-bottom: 32px;
+        line-height: 1.5;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        width: 100%;
+        padding: 16px 24px;
+        border-radius: 12px;
+        font-size: 16px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: transform 0.2s, box-shadow 0.2s;
+        margin-bottom: 12px;
+      }
+
+      .button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+      }
+
+      .button-primary {
+        background: #6366f1;
+        color: white;
+      }
+
+      .button-secondary {
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .button-icon {
+        width: 24px;
+        height: 24px;
+      }
+
+      .loading {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        margin-bottom: 24px;
+        opacity: 0.7;
+      }
+
+      .spinner {
+        width: 20px;
+        height: 20px;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        border-top-color: white;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+
+      @keyframes spin {
+        to { transform: rotate(360deg); }
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      .footer {
+        margin-top: 48px;
+        opacity: 0.5;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img src="/assets/favicon.png" alt="Habitability" class="logo" />
+
+      <div id="loading" class="loading">
+        <div class="spinner"></div>
+        <span>Opening Habitability...</span>
+      </div>
+
+      <div id="content" class="hidden">
+        <h1>Add Friend</h1>
+        <p>Open Habitability to add this person as a friend and start building habits together!</p>
+
+        <a href={deepLinkUrl} class="button button-primary" id="openApp">
+          <svg class="button-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4M10 17l5-5-5-5M13.8 12H3"/>
+          </svg>
+          Open in Habitability
+        </a>
+
+        <a href={siteConfig.storeLinks.apple} class="button button-secondary">
+          <svg class="button-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+          </svg>
+          Download on App Store
+        </a>
+      </div>
+
+      <p class="footer">Habitability - Build habits with friends</p>
+    </div>
+
+    <script define:vars={{ deepLinkUrl }}>
+      // Try to open the app via deep link
+      let appOpened = false;
+
+      // Set a timeout to show the fallback UI
+      const timeout = setTimeout(() => {
+        if (!appOpened) {
+          document.getElementById('loading').classList.add('hidden');
+          document.getElementById('content').classList.remove('hidden');
+        }
+      }, 2500);
+
+      // Try to detect if the app was opened
+      window.addEventListener('pagehide', () => {
+        appOpened = true;
+        clearTimeout(timeout);
+      });
+
+      window.addEventListener('blur', () => {
+        appOpened = true;
+        clearTimeout(timeout);
+      });
+
+      // Attempt to open the app
+      window.location.href = deepLinkUrl;
+    </script>
+  </body>
+</html>
