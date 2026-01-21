@@ -3,7 +3,6 @@
 /** biome-ignore-all lint/correctness/noUnusedVariables: variables used in Astro components */
 
 import AppHero from "@astro/sections/AppHero.astro";
-import ComingSoon from "@astro/sections/ComingSoon.astro";
 import FAQ from "@astro/sections/FAQ.astro";
 import Features from "@astro/sections/Features.astro";
 import FinalCTA from "@astro/sections/FinalCTA.astro";
@@ -54,10 +53,6 @@ const faqSchema = {
 
     <AnimatedSection delay={0.1} client:visible>
       <FAQ items={faqs} />
-    </AnimatedSection>
-
-    <AnimatedSection delay={0.1} client:visible>
-      <ComingSoon />
     </AnimatedSection>
 
     <AnimatedSection delay={0.1} client:visible>

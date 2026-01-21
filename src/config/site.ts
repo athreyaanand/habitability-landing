@@ -3,7 +3,7 @@ import { socialLinks } from "./socialLinks";
 export const siteConfig = {
 	name: "Habitability",
 	title: "Habitability - Build Habits with Friends",
-	description: "A habit tracker that actually works because your friends are in on it. Track habits together, nudge each other, and see who's keeping up. Free on iOS.",
+	description: "A habit tracker that actually works because your friends are in on it. Track habits together, nudge each other, and see who's keeping up. Free on iOS and Android.",
 	keywords: [
 		// Primary keywords
 		"habit tracker",
@@ -16,6 +16,9 @@ export const siteConfig = {
 		"iphone habit tracker",
 		"best habit tracker iphone",
 		"habit tracker ios app",
+		"android habit tracker",
+		"habit tracker android app",
+		"best habit tracker android",
 		// Feature keywords
 		"streak tracker",
 		"accountability app",
@@ -27,7 +30,7 @@ export const siteConfig = {
 		// Competitor alternatives
 		"habitica alternative",
 		"streaks alternative",
-		"best habit app 2025",
+		"best habit app 2026",
 		// Long-tail keywords
 		"habit tracker with accountability",
 		"track habits with friends",
@@ -44,8 +47,8 @@ export const siteConfig = {
 	logo: "/assets/favicon.png",
 	twitterHandle: "@habitabilityapp",
 	storeLinks: {
-		apple: "https://testflight.apple.com/join/VFyYyxPD",
-		google: "#",
+		apple: "https://apps.apple.com/us/app/habitability-habit-tracker/id6753961638",
+		google: "https://play.google.com/store/apps/details?id=com.athreyaanand.habitability",
 	},
 	socialLinks,
 } as const;

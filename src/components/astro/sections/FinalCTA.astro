@@ -2,7 +2,7 @@
 /** biome-ignore-all lint/correctness/noUnusedImports: React icons are used in JSX */
 /** biome-ignore-all lint/correctness/noUnusedVariables: variables used in Astro components */
 
-import { FaApple } from "react-icons/fa";
+import { FaApple, FaGooglePlay } from "react-icons/fa";
 import { siteConfig } from "@config/site";
 
 const { storeLinks } = siteConfig;
@@ -14,20 +14,35 @@ const { storeLinks } = siteConfig;
 			Try It Out
 		</h2>
 		<p class="text-gray-600 dark:text-gray-400 mb-8">
-			Free to use. No account required to start. Grab a friend and see if it helps you stick to something.
+			Free to use. Grab a friend and see if it helps you stick to something.
 		</p>
 
-		<a
-			href={storeLinks.apple}
-			target="_blank"
-			rel="noopener noreferrer"
-			class="group inline-flex items-center gap-3 rounded-xl bg-gray-900 dark:bg-white px-6 py-4 hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors shadow-sm"
-		>
-			<FaApple className="text-white dark:text-gray-900 w-6 h-6" />
-			<span class="text-left">
-				<div class="text-[10px] font-medium text-gray-300 dark:text-gray-500">Download on the</div>
-				<div class="text-sm font-semibold tracking-wide text-white dark:text-gray-900">App Store</div>
-			</span>
-		</a>
+		<div class="flex flex-col sm:flex-row gap-3 justify-center">
+			<a
+				href={storeLinks.apple}
+				target="_blank"
+				rel="noopener noreferrer"
+				class="group inline-flex items-center gap-3 rounded-xl bg-gray-900 dark:bg-white px-6 py-4 hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors shadow-sm"
+			>
+				<FaApple className="text-white dark:text-gray-900 w-6 h-6" />
+				<span class="text-left">
+					<div class="text-[10px] font-medium text-gray-300 dark:text-gray-500">Download on the</div>
+					<div class="text-sm font-semibold tracking-wide text-white dark:text-gray-900">App Store</div>
+				</span>
+			</a>
+
+			<a
+				href={storeLinks.google}
+				target="_blank"
+				rel="noopener noreferrer"
+				class="group inline-flex items-center gap-3 rounded-xl bg-gray-900 dark:bg-white px-6 py-4 hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors shadow-sm"
+			>
+				<FaGooglePlay className="text-white dark:text-gray-900 w-5 h-5" />
+				<span class="text-left">
+					<div class="text-[10px] font-medium text-gray-300 dark:text-gray-500">Get it on</div>
+					<div class="text-sm font-semibold tracking-wide text-white dark:text-gray-900">Google Play</div>
+				</span>
+			</a>
+		</div>
 	</div>
 </div>

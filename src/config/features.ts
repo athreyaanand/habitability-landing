@@ -9,12 +9,12 @@ export const features: Feature[] = [
 	},
 	{
 		title: "Friends Keep You Honest",
-		description: "Add friends to your habits. They'll see when you skip a day, and you can nudge each other to get back on track.",
+		description: "Add friends to hold you accountable. They'll see when you skip a day, celebrate your wins, and nudge you to get back on track.",
 		icon: FiUsers,
 	},
 	{
 		title: "Streaks That Matter",
-		description: "Your streak count is visible to friends. Nobody wants to be the one who broke a 30-day streak.",
+		description: "Don't break your streak! Nobody wants to be the one who broke a 30-day streak :(",
 		icon: FiTrendingUp,
 	},
 ];

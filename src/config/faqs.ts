@@ -11,7 +11,7 @@ export const faqs: FAQ[] = [
 	},
 	{
 		question: "What platforms is Habitability available on?",
-		answer: "Currently available for iOS via TestFlight, with Android coming soon. Your data syncs across all your devices automatically.",
+		answer: "Available on both iOS (App Store) and Android (Google Play). Your data syncs across all your devices automatically.",
 	},
 	{
 		question: "Does it work offline?",
