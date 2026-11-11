@@ -48,7 +48,9 @@ We use Firebase Analytics for usage events, Crashlytics for crash diagnostics, a
 - Crash reports, error categories, and stack traces
 - Session duration and frequency
 
-Analytics and crash reports can be associated with your account's unique identifier. This is pseudonymous, account-linked data, not anonymous data. These services also process installation and device information. Collection is enabled in production releases; the app currently has no analytics opt-out setting.
+Analytics and crash reports can be associated with your account's unique identifier. Performance data uses a Firebase installation identifier, which can be associated with your account through the app's device registration. This is pseudonymous, account-linked data, not anonymous data. These services also process installation and device information.
+
+Analytics and Performance Monitoring derive general location, such as country and, for Analytics, region or city, from your IP address. Habitability does not request GPS location for these features. Collection is enabled in production releases; the app currently has no analytics opt-out setting.
 
 ### Subscription Data
 If you subscribe to premium features:
@@ -80,7 +82,7 @@ We use these services to operate the app. The linked pages explain their privacy
 | Service | Purpose | Data Shared |
 |---------|---------|-------------|
 | **[Supabase](https://supabase.com/privacy)** | Database, authentication, file storage | Account, habit, social, feedback, device-registration, and profile-photo data |
-| **[Google Analytics for Firebase, Crashlytics, and Performance Monitoring](https://firebase.google.com/support/privacy)** | Usage analytics and diagnostics | Account-linked identifier, usage events, crash and performance information, installation and device information |
+| **[Google Analytics for Firebase, Crashlytics, and Performance Monitoring](https://firebase.google.com/support/privacy)** | Usage analytics and diagnostics | Account-linked and installation identifiers, usage events, crash and performance information, device information, and IP-derived general location |
 | **[Firebase Cloud Messaging](https://firebase.google.com/support/privacy)** | Push notifications | Messaging tokens, installation identifiers, and notification content |
 | **[RevenueCat](https://www.revenuecat.com/privacy)** | Subscription management | Account-linked subscriber identifier, purchase information, subscription status, and entitlements |
 | **[Resend](https://resend.com/legal/privacy-policy)** | Authentication email delivery | Recipient email address, email content, and delivery information |
