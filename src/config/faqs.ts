@@ -19,10 +19,10 @@ export const faqs: FAQ[] = [
 	},
 	{
 		question: "How do I delete my account?",
-		answer: "You can delete your account and all data directly in Settings > Account > Delete Account. Everything is immediately and permanently removed from our servers.",
+		answer: "Go to Profile > Account > Delete Account and confirm with your username. Successful deletion removes your account and associated active app records; backups and provider records may remain as described in our Privacy Policy. Manage any subscription separately through your app store.",
 	},
 	{
 		question: "Can I export my data?",
-		answer: "Of course. Export all your habits and history as a JSON file from Settings > Data Management. Your data belongs to you.",
+		answer: "Premium users can export habits and completion history as a JSON file from Profile > Data Management. For requests involving other personal information, contact privacy@habitability.app; a premium subscription is not required.",
 	},
 ];
